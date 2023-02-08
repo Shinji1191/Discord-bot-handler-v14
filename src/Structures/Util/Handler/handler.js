@@ -92,7 +92,7 @@ module.exports = async (client) => {
 
   client.on("ready", async () => {
     await registerCommands(client, { commands: slashArray.filter((file) => !file.config?.guildOnly) })
-    await registerCommands(client, { commands: slashArray, guild: client.config.developer.privateServerID })
+    if (client.config.developer.privateServerID) await registerCommands(client, { commands: slashArray, guild: client.config.developer.privateServerID })
   })
 
   eventDirectory.forEach((filePath) => {

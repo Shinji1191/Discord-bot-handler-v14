@@ -1,4 +1,4 @@
-const { Client, Collection } = require("discord.js");
+const { Client, Collection, Partials } = require("discord.js");
 const handler = require("../Util/Handler/handler");
 const clientConfig = require("../Util/Configurations/clientConfig")
 
@@ -20,6 +20,15 @@ class ExtendedClient extends Client {
         "GuildVoiceStates",
         "Guilds",
         "MessageContent",
+      ],
+      partials: [
+        Partials.Channel,
+        Partials.GuildMember,
+        Partials.GuildScheduledEvent,
+        Partials.Message,
+        Partials.Reaction,
+        Partials.ThreadMember,
+        Partials.User,
       ]
     })
   }
