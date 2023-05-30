@@ -2,7 +2,8 @@ const { Event } = require("../../Structures/Util/Classes/Event");
 const { EmbedBuilder } = require("discord.js");
 
 module.exports = new Event({
-  name: "messageCreate",
+  name: "messageCommandRun",
+  event: "messageCreate",
   async run(client, message) {
     let prefix = client.config.bot.prefix
     if (
@@ -23,7 +24,7 @@ module.exports = new Event({
         let embed = new EmbedBuilder()
           .setTitle("Error")
           .setDescription("```❌ | This command is only for my developer.```")
-          .setColor("Red");
+          .setColor("#2B2D31");
         return message.reply({ embeds: [embed] });
       }
 
@@ -31,7 +32,7 @@ module.exports = new Event({
         let embed = new EmbedBuilder()
           .setTitle("Error")
           .setDescription("```❌ | This command only a server only command.```")
-          .setColor("Red");
+          .setColor("#2B2D31");
         return message.reply({ embeds: [embed] });
       }
 
@@ -39,7 +40,7 @@ module.exports = new Event({
         let embed = new EmbedBuilder()
           .setTitle("Error")
           .setDescription("```❌ | You can only run this command in a nsfw enabled channel.```")
-          .setColor("Red")
+          .setColor("#2B2D31")
         return message.reply({ embeds: [embed] })
       }
 
@@ -47,7 +48,7 @@ module.exports = new Event({
         let embed = new EmbedBuilder()
           .setTitle("Error")
           .setDescription("```❌ | This command is only for the owner of this server.```")
-          .setColor("Red")
+          .setColor("#2B2D31")
         return message.reply({ embeds: [embed] })
       }
     }
@@ -57,7 +58,7 @@ module.exports = new Event({
         let embed = new EmbedBuilder()
           .setTitle("Error")
           .setDescription("```❌ | You do not have the permissions to use this command.```")
-          .setColor("Red")
+          .setColor("#2B2D31")
         return message.reply({ embeds: [embed] })
       }
 
@@ -65,7 +66,7 @@ module.exports = new Event({
         let embed = new EmbedBuilder()
           .setTitle("Error")
           .setDescription("```❌ | I do not have the permissions to run this command.```")
-          .setColor("Red")
+          .setColor("#2B2D31")
         return message.reply({ embeds: [embed] })
       }
     }

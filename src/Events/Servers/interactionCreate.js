@@ -2,7 +2,8 @@ const { Event } = require("../../Structures/Util/Classes/Event");
 const { EmbedBuilder } = require("discord.js");
 
 module.exports = new Event({
-  name: "interactionCreate",
+  name: "interactionCommandRun",
+  event: "interactionCreate",
   async run (client, interaction) {
     if (interaction.isChatInputCommand()) {
       let command = client.slashCommands.get(interaction.commandName);

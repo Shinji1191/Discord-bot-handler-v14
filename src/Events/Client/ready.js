@@ -5,7 +5,8 @@ const { Event } = require("../../Structures/Util/Classes/Event");
 const tableConfig = require("../../Structures/Util/Handler/tableConfig");
 
 module.exports = new Event({
-  name: "ready",
+  name: "clientReady",
+  event: "ready",
   async run(client) {
     let data = [
       ["Client", "Value", "Description"]

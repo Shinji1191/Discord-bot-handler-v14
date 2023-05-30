@@ -19,7 +19,7 @@ module.exports = new PrefixCommand({
       .setDescription(`
 **Websocket Ping:** \`${getLatency}${client.ws.ping}ms\`
       `)
-      .setColor("Random")
+      .setColor("#2B2D31")
     message.reply({ embeds: [embed] })
   },
 });

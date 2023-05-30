@@ -103,9 +103,9 @@ module.exports = async (client) => {
 
     if (!file?.name) return;
 
-    if (file.name) {
-      if (file?.once) client.once(file.name, file.run.bind(null, client));
-      else client.on(file.name, file.run.bind(null, client));
+    if (file.event) {
+      if (file?.once) client.once(file.event, file.run.bind(null, client));
+      else client.on(file.event, file.run.bind(null, client));
     }
   });
 };
