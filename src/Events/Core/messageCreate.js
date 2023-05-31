@@ -1,5 +1,5 @@
 const { Event } = require("../../Structures/Util/Classes/Event");
-const { EmbedBuilder } = require("discord.js");
+const { EmbedBuilder, ChannelType, GuildMember } = require("discord.js");
 
 module.exports = new Event({
   name: "messageCommandRun",
@@ -71,6 +71,11 @@ module.exports = new Event({
       }
     }
 
-    command.run({ args, client, message })
+    try {
+      command.run({ args, client, message })
+        .setThumbnail("Command Used")
+    } catch (error) {
+      
+    }
   },
 });

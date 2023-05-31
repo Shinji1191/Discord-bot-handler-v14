@@ -27,6 +27,16 @@ node .
       databaseURL: "" /** Your MongoDB URL \*/,
       prefix: "!" /** The prefix of your bot\*/
     },
+    channels: {
+      greeter: {
+        welcome: "", // Send welcome messages to this channel when a member joins your server
+        goodbye: "" // Send goodbye messages to this channel when a member leaves your server
+      },
+      guilds: {
+        join: "", // Send a message to this channel when your bot gets invited to a server
+        leave: "" // Send a messages to this channel when your bot gets removed from a server
+      },
+    }
   }
   ```
 

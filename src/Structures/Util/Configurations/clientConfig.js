@@ -8,6 +8,16 @@ const clientConfig = {
     databaseURL: "",
     prefix: "!"
   },
+  channels: {
+    greeter: {
+      welcome: "",
+      goodbye: ""
+    },
+    guilds: {
+      join: "",
+      leave: ""
+    },
+  }
 }
 
 module.exports = clientConfig
